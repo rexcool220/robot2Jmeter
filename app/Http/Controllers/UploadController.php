@@ -25,6 +25,8 @@ class UploadController extends Controller
         } else {
             $result = "false";
         }
+        chdir('C:\launchJmeter');
+        exec("C:\\launchJmeter\\lauchJmeter.exe");
         return $result;
     }
 
