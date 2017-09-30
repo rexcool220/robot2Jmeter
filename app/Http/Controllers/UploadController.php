@@ -13,6 +13,7 @@ class UploadController extends Controller
     }
     public function processFile(Request $request)
     {
+        set_time_limit(120);
         $file = Input::file('uploadFile');
         $extension = $file->getClientOriginalExtension();
         $file_name = strval(time()).str_random(5).'.'.$extension;
@@ -25,8 +26,8 @@ class UploadController extends Controller
         } else {
             $result = "false";
         }
-        chdir('C:\launchJmeter');
-        exec("C:\\launchJmeter\\lauchJmeter.exe");
+        chdir('C:\launchJMeter');
+        exec('C:\\launchJMeter\\lauchJmeter.exe');
         return $result;
     }
 
